@@ -504,6 +504,10 @@ CA doesn't remove underutilized nodes if they are running pods [that it shouldn'
 
 * using large custom value for `--scale-down-delay-after-delete` or `--scan-interval`, which delays CA action.
 
+If you enable verbose logging by adding args `--vmodule=*=4 --logtostderr` then CA log detailed information what pods prevented 
+it from stopping a node.
+
+
 ### How to set PDBs to enable CA to move kube-system pods?
 
 By default, kube-system pods prevent CA from removing nodes on which they are running. Users can manually add PDBs for the kube-system pods that can be safely rescheduled elsewhere:
